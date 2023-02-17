@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="befarman_app">
+    <link rel="apple-touch-icon" href="assets/icons/Icon-192.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <title>اپلیکیشن بفرمان</title>
+    <link rel="manifest" href="manifest.json">
+    <!--SEO-->
+    <meta property="og:locale" content="fa_IR"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title"
+          content="اجاره خودرو | رنت ماشین در سراسر ایران | بفرمان| اجاره خودرو مردم به مردم"/>
+    <meta property="og:description"
+          content="اولین سامانه [ اپلیکیشن ] اجاره خودرو بدون واسطه و به صورت مردم به مردم، در سطح ایران همراه با بیمه و نظارت کامل"/>
+    <meta property="og:url" content="https://befarman.com/"/>
+    <meta property="og:site_name" content="بفرمان| اجاره خودرو مردم به مردم"/>
+    <meta property="article:modified_time" content="2022-08-09T12:52:14+00:00"/>
+    <meta property="og:image"
+          content="https://befarman.com/wp-content/uploads/2022/07/اجاره-خودرو.jpg"/>
+    <meta property="og:image:width" content="600"/>
+    <meta property="og:image:height" content="341"/>
+    <meta property="og:image:type" content="image/jpeg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Style and Script-->
+    <style>
+      #loading_indicator {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            /* Default Axis is X*/
+            justify-content: center;
+            /* Main Axis */
+            align-items: center;
+            /* Cross Axis */
+            flex-direction: column;
+        }
+
+        .indicator {
+            width: 70vw;
+            padding-bottom: 32px;
+        }
+
+        #progressBox {
+            width: 60vw;
+        }
+
+        .progress {
+            background: #f2f2f8;
+            height: 14px;
+            border-radius: 50px;
+            -moz-box-shadow: 0 0px 3px #E7E7ED inset, 0 0 10px #e7e7ed47;
+            -webkit-box-shadow: 0 0px 3px #E7E7ED inset, 0 0 10px #e7e7ed47;
+            box-shadow: 0 0px 3px #E7E7ED inset, 0 0 10px #e7e7ed47;
+        }
+
+        #progress-bar {
+            border-radius: 50px;
+            width: 5%;
+            height: 100%;
+            background-color: #d81159;
+            -webkit-box-shadow: inset 0 0 10px rgb(216 17 89 / 25%);
+            box-shadow: 0 0 10px rgb(216 17 89 / 25%);
+            -webkit-transition: width 2s ease !important;
+            -moz-transition: width 2s ease !important;
+            -o-transition: width 2s ease !important;
+            transition: width 2s ease !important;
+        }
+
+        #loading {
+            width: 26vw;
+            padding-top: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .indicator {
+                width: 30vw;
+                padding-bottom: 24px;
+            }
+
+            #progressBox {
+                width: 28vw;
+            }
+
+            #loading {
+                width: 10vw;
+                padding-top: 24px;
+            }
+        }
+
+        @media (min-width: 528px) and (max-width: 768px) {
+            .indicator {
+                width: 50vw;
+                padding-bottom: 32px;
+            }
+
+            #progressBox {
+                width: 45vw;
+            }
+
+            #loading {
+                width: 18vw;
+                padding-top: 32px;
+            }
+        }
+
+        @media only screen and (max-width: 528px) {
+            .indicator {
+                width: 70vw;
+                padding-bottom: 32px;
+            }
+
+            #progressBox {
+                width: 60vw;
+            }
+
+            #loading {
+                width: 26vw;
+                padding-top: 32px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #17181f;
+            }
+
+            #loading {
+                filter: invert(0.85);
+            }
+        }
+
+    </style>
+    <script>
+    // The value below is injected by flutter build, do not touch.
+    var serviceWorkerVersion = '3300648982';
+
+    </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <!--    <script src="flutter.js" defer></script>-->
+    <script src="flutter.js" defer></script>
+    <meta name="theme-color" content="#c3135a">
+</head>
+<body>
+<div id="loading_indicator" class="container"><img class="indicator" src="./assets/loading.gif">
+    <!--END resumeProficienciesTop-->
+    <div id="progressBox">
+        <div id="resumeProficienciesBottom">
+            <div class="progress">
+                <div id="progress-bar" role="progressbar" style="width: 0%;"></div>
+            </div>
+        </div>
+    </div> <!--END resumeProficienciesBottom--> <img id="loading" src="./assets/loading.svg">
+</div>
+<script>
+        window.addEventListener('load', function (ev) {
+            var loading = document.querySelector('#loading');
+            var progress = document.querySelector('#progress-bar');
+            progress.style.width = "35%";
+            _flutter.loader.loadEntrypoint({
+                serviceWorker: {
+                     serviceWorkerVersion: serviceWorkerVersion,
+                    }
+            }).then(function (engineInitializer) {
+                loading.src = "./assets/initializing.svg";
+                progress.style.transition = "all 4s";
+                progress.style.width = "85%";
+                return engineInitializer.initializeEngine();
+            }).then(function (appRunner) {
+                loading.src = "./assets/running.svg";
+                progress.style.transition = "all 0.05s";
+                progress.style.width = "100%";
+                setTimeout(function () {
+                    var loadingIndicator = document.getElementById("loading_indicator");
+                    if (loadingIndicator) {
+                        loadingIndicator.remove();
+                    }
+                }, 12000);
+                return appRunner.runApp();
+            });
+        });
+</script>
+</body>
+</html>
