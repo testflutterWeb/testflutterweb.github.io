@@ -140,10 +140,12 @@
             }
         }
 
+
     </style>
     <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '3300648982';
+    var serviceWorkerVersion = '2505625883';
+
 
     </script>
     <!-- This script adds the flutter initialization JS code -->
@@ -163,10 +165,12 @@
     </div> <!--END resumeProficienciesBottom--> <img id="loading" src="./assets/loading.svg">
 </div>
 <script>
+
         window.addEventListener('load', function (ev) {
             var loading = document.querySelector('#loading');
             var progress = document.querySelector('#progress-bar');
             progress.style.width = "35%";
+            let useHtml = true;
             _flutter.loader.loadEntrypoint({
                 serviceWorker: {
                      serviceWorkerVersion: serviceWorkerVersion,
@@ -175,7 +179,10 @@
                 loading.src = "./assets/initializing.svg";
                 progress.style.transition = "all 4s";
                 progress.style.width = "85%";
-                return engineInitializer.initializeEngine();
+                let config = {
+                  renderer: useHtml ? "html" : "canvaskit",
+                }
+                return engineInitializer.initializeEngine(config);
             }).then(function (appRunner) {
                 loading.src = "./assets/running.svg";
                 progress.style.transition = "all 0.05s";
@@ -189,6 +196,7 @@
                 return appRunner.runApp();
             });
         });
+
 </script>
 </body>
 </html>
