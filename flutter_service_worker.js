@@ -16,7 +16,8 @@ const RESOURCES = {
 "assets/assets/images/logo_type.svg": "1ad01dd37a0cbbe4928dcc67bfc97ec1",
 "assets/assets/images/price-bar.png": "7fe267855477a64ddfa25086cc34bae7",
 "assets/choosing-a-car.gif": "38edbbdf275bf8653a9bd93c9d2b614c",
-"assets/FontManifest.json": "a09b83d488ff0de53c096ffdda5b52a1",
+"assets/FontManifest.json": "ceb2af09e41361fa132a24f3ad235427",
+"assets/fonts/MaterialIcons-Regular.otf": "e7069dfd19b331be16bed984668fe080",
 "assets/icons/icon-128x128.png": "57bc23e35313e91454bb2b4d069029da",
 "assets/icons/icon-144x144.png": "85a719c02a197b395dc98afeabdf8ffc",
 "assets/icons/icon-152x152.png": "f84ba3313d3c2b1f7800f152ad828f63",
@@ -77,9 +78,9 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.wasm": "371bc4e204443b0d5e774d64a046eb99",
 "favicon.png": "48d82c1d24a47c831fe8f77586ccc927",
 "flutter.js": "1cfe996e845b3a8a33f57607e8b09ee4",
-"index.html": "aa7955c6854b4adc0408b77a440cd385",
-"/": "aa7955c6854b4adc0408b77a440cd385",
-"main.dart.js": "05a03699e0603f2e086851666ac72e65",
+"index.html": "7399a7bfb118c6f09bca51679b1491cb",
+"/": "7399a7bfb118c6f09bca51679b1491cb",
+"main.dart.js": "a2d248a2e3eda0e16854302e0e1dc77e",
 "manifest.json": "248946a2d6bb73c11b5daebfd1718bf0",
 "version.json": "dbd50f0336b364d6b4009193512a8a92"
 };
